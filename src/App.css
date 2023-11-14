@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.ticket-group-container {
+  margin: 10px;
+}
+.ticket-group {
+  display: flex;
+  width: 500px;
+}
+select {
+  padding: 5px 15px;
+  outline: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ================================ display button ==================================== */
+
+.app_display {
+  position: relative;
+}
+.app_display button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  gap: 8px;
+  padding: 5px 10px;
+}
+.settings {
+  font-weight: bold;
+}
+.dropdown {
+  font-size: 20px;
+}
+.app_display_options {
+  position: absolute;
+  z-index: 20;
+  bottom: -5.7rem;
+  left: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: rgb(247, 247, 247) !important;
+}
+.grouping_label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app_display button,
+.grouping_label select,
+.app_display_options {
+  background-color: rgb(255, 255, 255);
+  border: 0.4px solid rgba(217, 217, 217, 0.765);
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
+/*================================== board =======================================*/
+
+.board {
+  min-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: #f8f8f8;
+}
+.board_top {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin: 0px 14px;
+  padding-top: 10px;
+  gap: 10px;
+}
+.board_top_title {
+  flex: 1;
+  font-weight: 500;
+}
+.board_top_title span {
+  color: grey;
+  padding-left: 5px;
+}
+.board_cards {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* ============================= ticket card ========================================*/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  border: 0.2px solid rgba(217, 217, 217, 0.765);
+  padding: 10px;
+  border-radius: 0.4rem;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: 1px 1.6px #d6d6d6;
+}
+.card_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card_title h3 {
+  color: gray;
+  font-weight: 400;
+}
+.card_avatar {
+  position: relative;
+}
+.avatar {
+  font-size: 2.4rem;
+}
+.online {
+  color: gray;
+  position: absolute;
+  bottom: -4px;
+  right: -3px;
+  z-index: 10;
+  font-size: 1.8rem;
+}
+.card_description {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.card_description small {
+  margin-bottom: 15px;
+}
+.card_button {
+  gap: 5px;
+}
+.card_button,
+.card_button button {
+  display: flex;
+  align-items: center;
+}
+.card_button button {
+  outline: none;
+  cursor: pointer;
+  background: none;
+  border: 1px solid rgba(219, 219, 219, 0.656);
+  padding: 6px;
+  border-radius: 7px;
+  color: gray;
+  height: 28px;
+}
+.dot {
+  font-size: 1.3rem;
+}
+.progress {
+  color: rgb(227, 227, 1);
+}
+.backlog {
+  color: rgb(167, 0, 0);
+}
+.urgent {
+  color: orangered;
 }
